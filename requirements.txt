@@ -1,0 +1,30 @@
+# Core LangGraph and LangChain
+langgraph>=0.2.0
+langchain>=0.3.25
+langchain-core>=0.3.64
+langchain-community>=0.3.0
+
+# State management and communication
+redis>=5.0.0
+aioredis
+
+# HTTP client for API calls
+aiohttp>=3.9.0
+
+# Memory system integration
+mem0ai[graph]>=0.1.106
+qdrant-client>=1.7.0
+neo4j>=5.0.0
+
+# YAML configuration
+pyyaml>=6.0
+
+# Optional: Local LLM support
+llama-cpp-python>=0.2.0
+
+# Optional: Text embeddings
+sentence-transformers>=2.2.0
+
+# Development and testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0

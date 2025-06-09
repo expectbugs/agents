@@ -1,0 +1,55 @@
+general:
+  debug: false
+  instance_name: "Local SearXNG for Agent System"
+  enable_metrics: false
+
+server:
+  port: 8080
+  bind_address: "127.0.0.1"
+  base_url: false
+  limiter: false
+  
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "en"
+
+ui:
+  static_use_hash: false
+  search_on_category_select: true
+  infinite_scroll: false
+  center_alignment: false
+
+enabled_plugins:
+  - 'Basic Calculator'
+  - 'Hash plugin'
+  - 'Self Information'
+  - 'Tracker URL remover'
+  - 'Unit converter plugin'
+
+engines:
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
+    timeout: 3.0
+    disabled: false
+  - name: google
+    engine: google
+    shortcut: go
+    timeout: 3.0
+    disabled: false
+  - name: bing
+    engine: bing
+    shortcut: bi
+    timeout: 3.0
+    disabled: false
+  - name: startpage
+    engine: startpage
+    shortcut: sp
+    timeout: 4.0
+    disabled: false
+  - name: wikipedia
+    engine: wikipedia
+    shortcut: wp
+    timeout: 3.0
+    disabled: false
