@@ -20,18 +20,20 @@ A production-ready multi-agent orchestration system built with LangGraph and Lan
 
 ### Installation
 ```bash
-git clone <repository>
+git clone https://github.com/expectbugs/agents.git
 cd agents
 
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Install additional memory system dependencies
-pip install mem0ai[graph] qdrant-client neo4j
+# ⚠️ IMPORTANT: Set up external services
+# The system requires several external services to function:
+# See SETUP.md for detailed instructions
 
-# Set up Perplexica (in separate terminal)
-cd Perplexica
-npm install && npm run dev
+# Quick setup summary:
+# 1. Set up Perplexica (AI search) - See SETUP.md
+# 2. Set up SearXNG (search backend) - See SETUP.md  
+# 3. Start Redis, Qdrant, Neo4j - See SETUP.md
 ```
 
 ### Basic Usage
