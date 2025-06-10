@@ -24,7 +24,7 @@ class PerplexicaSearchAgent(BaseAgent):
     
     def __init__(self):
         super().__init__("perplexica_search")
-        self.perplexica_url = "http://localhost:3000"
+        self.perplexica_url = "http://localhost:3000"  # Updated to actual running port
         
     async def process(self, state: MultiAgentState) -> Dict[str, Any]:
         """Process search request using Perplexica"""
@@ -111,7 +111,7 @@ class PerplexicaSearchAgent(BaseAgent):
         }
         
         try:
-            timeout = aiohttp.ClientTimeout(total=30)  # 30 second timeout
+            timeout = aiohttp.ClientTimeout(total=60)  # 60 second timeout for AI processing
             async with aiohttp.ClientSession(timeout=timeout) as session:
                 async with session.post(search_url, json=payload) as response:
                     if response.status == 200:

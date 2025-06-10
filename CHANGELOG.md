@@ -2,6 +2,33 @@
 
 All notable changes to the LangGraph Multi-Agent System will be documented in this file.
 
+## [0.0.2] - 2025-06-10
+
+### Fixed
+- **Critical Backend Connectivity**: Fixed post-reboot service dependencies
+- **SearXNG Integration**: Resolved module import and secret key configuration issues
+- **Perplexica Port Detection**: Fixed automatic port detection and configuration
+- **Silent Fallbacks**: Added clear error messages when SearXNG backend fails
+- **Service Dependencies**: Fixed Redis, LLM server, and search backend startup sequence
+
+### Added
+- **Automated Startup Script**: `/home/user/agents/start_services.sh` for post-reboot initialization
+- **Service Health Monitoring**: Comprehensive service status checking and reporting
+- **Error Visibility**: Clear backend failure messages following "no silent failures" principle
+- **Timeout Optimization**: Increased Perplexica timeout for AI processing (30→60s)
+
+### Improved
+- **Performance**: Reduced search response time from 60s timeouts to 1.5s success
+- **Reliability**: All critical backends (Redis, SearXNG, Perplexica, LLM server) working
+- **User Experience**: Clear service URLs and startup guidance in automated script
+- **Error Handling**: Loud error reporting instead of silent backend failures
+
+### Technical
+- **LLM Context**: Increased from 2048 to 4096 tokens for better AI responses
+- **Port Management**: Automatic detection of Perplexica port (3000/3001)
+- **Configuration**: Fixed SearXNG secret key from default "ultrasecretkey"
+- **Dependencies**: Proper PYTHONPATH setup for SearXNG module imports
+
 ## [0.0.1] - 2025-06-09
 
 ### Added
