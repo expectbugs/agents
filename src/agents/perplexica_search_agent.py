@@ -126,7 +126,7 @@ class PerplexicaSearchAgent(BaseAgent):
                             results.append({
                                 "title": "AI Summary",
                                 "url": "",
-                                "snippet": data["message"][:500],
+                                "snippet": data["message"],
                                 "source": "perplexica_ai"
                             })
                         
@@ -136,7 +136,7 @@ class PerplexicaSearchAgent(BaseAgent):
                             results.append({
                                 "title": metadata.get("title", "Unknown Title"),
                                 "url": metadata.get("url", ""),
-                                "snippet": source.get("pageContent", "")[:300],
+                                "snippet": source.get("pageContent", ""),
                                 "source": "perplexica"
                             })
                         
@@ -159,20 +159,20 @@ class PerplexicaSearchAgent(BaseAgent):
         response += f"**Found:** {len(results)} enhanced results\n\n"
         
         for i, result in enumerate(results[:7], 1):  # Show top 7 results
-            title = result.get("title", "No title")[:60]
+            title = result.get("title", "No title")
             url = result.get("url", "")
-            snippet = result.get("snippet", "No description available")[:200]
+            snippet = result.get("snippet", "No description available")
             source_type = result.get("source", "unknown")
             
             # Different formatting for AI summary vs sources
             if source_type == "perplexica_ai":
-                response += f"🤖 **AI Analysis:**\n{snippet}...\n\n"
+                response += f"🤖 **AI Analysis:**\n{snippet}\n\n"
             else:
                 response += f"**{i-1}. {title}**\n"
                 if url:
                     response += f"🔗 {url}\n"
                 if snippet:
-                    response += f"📄 {snippet}...\n"
+                    response += f"📄 {snippet}\n"
                 response += "\n"
         
         response += "💡 *This search used AI to analyze and summarize web results for better insights.*"

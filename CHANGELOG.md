@@ -2,6 +2,22 @@
 
 All notable changes to the LangGraph Multi-Agent System will be documented in this file.
 
+## [0.0.3] - 2025-06-10
+
+### Fixed
+- **Perplexica Response Truncation**: Removed artificial character limits on AI responses and source content
+- **Search Result Quality**: Full AI analysis now displayed instead of truncated summaries
+
+### Improved  
+- **Search Completeness**: Users now receive complete AI-generated responses (2900+ chars vs 500 char limit)
+- **Source Content**: Full source content preserved instead of arbitrary 300 character truncation
+- **Information Quality**: No more incomplete responses due to display formatting limits
+
+### Technical
+- **Response Processing**: Removed truncation in `perplexica_search_agent.py` lines 129, 139, 164
+- **Content Preservation**: Full API responses now passed through without artificial limits
+- **Display Formatting**: Eliminated "..." truncation indicators in search results
+
 ## [0.0.2] - 2025-06-10
 
 ### Fixed
